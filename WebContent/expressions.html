@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs examples</title>
+<script src="js/angular.js"></script>
+<script src="js/appmodel.js"></script>
+</head>
+<body ng-app="myapp">
+	<a href="index.html">back</a><br>
+
+	<div>
+	  <p>My first expression: {{ 5 + 5 }}</p>
+	</div>
+	
+	<div>
+	  <p>My second expression: {{ 5 * 5 }}</p>
+	</div>
+	
+	<div ng-init="myCol='red'">
+		<input value="{{myCol}}">
+	</div>
+
+</body>
+</html>

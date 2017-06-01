@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs examples</title>
+<script src="js/angular.js"></script>
+<script src="js/appmodel.js"></script>
+</head>
+<body ng-app="myapp">
+	<a href="index.html">back</a><br>
+	
+	<b>Example 1</b>
+	<div ng-init="quantity=1;price=5">
+		Quantity: <input type="number" ng-model="quantity" value="3">
+		Costs:    <input type="number" ng-model="price" value="4">
+		
+		Total in dollar: {{ quantity * price }}
+	</div>
+	<b>Example 2</b>
+	<div ng-init="names=['Jani','Hege','Kai']">
+	  <ul>
+	    <li ng-repeat="x in names">
+	      {{ x }}
+	    </li>
+	  </ul>
+	</div>
+	<b>Example 3</b>
+	<div ng-init="names2=[
+	{name:'Jani',country:'Norway'},
+	{name:'Hege',country:'Sweden'},
+	{name:'Kai',country:'Denmark'}]">
+		<ul>
+		  <li ng-repeat="x in names2">
+		    {{ x.name + ', ' + x.country }}
+		  </li>
+		</ul>
+	</div>
+	<b>Example 4 - wlasne dyrektywy</b>
+	<test-directive>aaa</test-directive>
+	<div test-directive>bbb</div>
+</body>
+</html>

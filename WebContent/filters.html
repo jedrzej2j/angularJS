@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs examples</title>
+<script src="js/angular.js"></script>
+<script src="js/appmodel.js"></script>
+</head>
+<body ng-app="myapp">
+	<a href="index.html">back</a><br>
+	
+	<h3>1.Przyklad pierwszy</h3>
+	<div ng-controller="filterCtrl">
+		<p>The name is {{ firstName | lowercase }} {{ lastName | uppercase }}</p>
+	</div>
+	
+	<h3>2.Filtry a dyrektywy</h3>
+	<div ng-controller="filterCtrl">
+		<p>ng-repeat i sortowanie po panstwie:</p>
+		<ul>
+		  <li ng-repeat="x in names | orderBy:'country'">
+		    {{ x.name + ', ' + x.country }}
+		  </li>
+		</ul>
+	</div>
+
+	<h3>3.Waluta</h3>
+	<div ng-controller="filterCtrl">
+		Price: {{ price | currency }} <br>
+		Price in PLN: {{ price | currency : "USD"}}
+	</div>
+	
+	<h3>4.Filtr filter - imiona z litera 'i'</h3>
+	<div ng-controller="filterCtrl">
+		<ul>
+		  <li ng-repeat="x in names | filter : 'i'">
+		    {{ x.name }}
+		  </li>
+		</ul>
+	</div>
+	
+	<h3>5.Sortowanie zawartosci po kliknieciu na nazwe kolumny</h3>
+	<div ng-controller="filterCtrl">
+		<table border="1" width="100%">
+		<tr>
+		<th ng-click="orderByMe('name')">Name</th>
+		<th ng-click="orderByMe('country')">Country</th>
+		</tr>
+		<tr ng-repeat="x in names | orderBy:myOrderBy">
+		<td>{{x.name}}</td>
+		<td>{{x.country}}</td>
+		</tr>
+		</table>
+	</div>
+	
+	<h3>6.Filtry uzytkownika</h3>
+	<div ng-controller="filterCtrl">
+		<li ng-repeat="x in names">
+		    {{x.name | myFormat}}
+		</li>
+	</div>
+
+</body>
+</html>

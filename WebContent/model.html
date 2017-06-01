@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs examples</title>
+<script src="js/angular.js"></script>
+<script src="js/appmodel.js"></script>
+</head>
+<body ng-app="myapp">
+	<a href="index.html">back</a><br>
+
+	<h3>1. ng-model zapewnia status danych aplikacji (invalid, dirty, touched, error):</h3>
+	
+	<form name="myForm" ng-init="myText = 'mail@gmail.com'">
+	    Email:
+	    <input type="email" name="myAddress" ng-model="myText" required>
+	    (zmieniajac adres wplywamy na status)
+	    <h4>Status</h4>
+	    valid: <b>{{myForm.myAddress.$valid}}</b> wartosc true oznacza ze mail ma poprawna forme<br>
+	    dirty: <b> {{myForm.myAddress.$dirty}}</b> wartosc true oznacza ze zawartosc zostala zmieniona<br>
+	    touched: <b> {{myForm.myAddress.$touched}}</b> wartosc true oznacza ze kliknieto w okno z zawartoscia<br>
+	</form>
+
+	<h3>2. Two-Way Binding:</h3>
+
+	<div ng-controller="nameCtrl">
+		Name: <input ng-model="name">
+		You entered: {{name}}
+	</div>
+
+
+</body>
+</html>

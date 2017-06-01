@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs examples</title>
+<script src="js/angular.js"></script>
+<script src="js/appmodel.js"></script>
+</head>
+<body ng-app="myapp">
+	<b>body start</b><br>
+	<a href="index.html">back</a><br>
+	
+	{{text}}
+	<div ng-controller="scopeTest">
+	   &nbsp; <b>div start</b><br>
+	   &nbsp; {{text}}
+	   <br> &nbsp; <b>div end</b>
+	</div>
+	{{text}}
+	
+	<br><b>body end</b>
+
+</body>
+</html>
